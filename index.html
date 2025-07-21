@@ -2,66 +2,62 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Proyecto RSU - Cursos Digitales</title>
-  <style>
-    body { font-family: Arial; margin: 0; padding: 0; background: #f2f2f2; }
-    header, footer { background: #004080; color: white; text-align: center; padding: 1em; }
-    nav a { margin: 0 15px; color: white; text-decoration: none; }
-    section { padding: 2em; background: white; margin: 1em auto; max-width: 900px; border-radius: 8px; }
-    h1, h2 { color: #004080; }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inicio - Proyecto RSU UNPRG</title>
+  <link rel="stylesheet" href="estilos.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<header>
-  <h1>Herramientas Digitales para la Educación Peruana</h1>
-  <nav>
-    <a href="#inicio">Inicio</a>
-    <a href="#proyecto">Sobre el proyecto</a>
-    <a href="#cursos">Cursos</a>
-    <a href="#recursos">Recursos</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
-</header>
+  <header>
+    <div class="container">
+      <img src="img/logo-unprg.png" alt="Logo UNPRG" class="logo">
+      <h1>Proyecto RSU: Herramientas Digitales para la Educación Peruana</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="active">Inicio</a></li>
+          <li><a href="sobre.html">Sobre el Proyecto</a></li>
+          <li><a href="cursos.html">Cursos</a></li>
+          <li><a href="recursos.html">Recursos</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-<section id="inicio">
-  <h2>Bienvenidos</h2>
-  <p>Este proyecto RSU de la Universidad Nacional Pedro Ruiz Gallo busca enseñar a estudiantes de primaria y secundaria en el uso de herramientas digitales clave para la enseñanza moderna.</p>
-</section>
+  <main class="container">
+    <section class="hero">
+      <h2>Bienvenido a nuestra iniciativa</h2>
+      <p>Este sitio forma parte de un proyecto de Responsabilidad Social Universitaria liderado por estudiantes de Ingeniería en Computación e Informática de la <strong>Universidad Nacional Pedro Ruiz Gallo</strong>.</p>
+      <p>Ofrecemos formación gratuita en herramientas digitales clave para docentes de educación primaria y secundaria.</p>
+      <a href="cursos.html" class="btn">Ver Cursos</a>
+    </section>
 
-<section id="proyecto">
-  <h2>Sobre el proyecto</h2>
-  <p>Desarrollado por estudiantes de Ingeniería en Computación e Informática, ofrecemos formación gratuita en herramientas como Google Classroom, Canva, Word, Excel, PowerPoint, entre otras.</p>
-</section>
+    <section class="destacados">
+      <h2>¿Qué ofrecemos?</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Capacitación Gratuita</h3>
+          <p>Accede a cursos diseñados especialmente para docentes peruanos.</p>
+        </div>
+        <div class="card">
+          <h3>Materiales Didácticos</h3>
+          <p>Guías, presentaciones y videotutoriales disponibles para descargar.</p>
+        </div>
+        <div class="card">
+          <h3>Soporte Estudiantil</h3>
+          <p>Acompañamiento técnico por estudiantes voluntarios de UNPRG.</p>
+        </div>
+      </div>
+    </section>
+  </main>
 
-<section id="cursos">
-  <h2>Listado de Cursos</h2>
-  <ul>
-    <li><strong>Google Classroom:</strong> Creación de clases, tareas y gestión de alumnos.</li>
-    <li><strong>Canva:</strong> Diseño gráfico para presentaciones y material educativo.</li>
-    <li><strong>Word / PowerPoint:</strong> Herramientas para preparar clases efectivas.</li>
-    <li><strong>Google Forms:</strong> Evaluaciones en línea.</li>
-  </ul>
-</section>
-
-<section id="recursos">
-  <h2>Recursos Adicionales</h2>
-  <p>Descarga guías, tutoriales y plantillas que te ayudarán en tu formación.</p>
-  <ul>
-    <li><a href="#">Guía en PDF: Introducción a Canva</a></li>
-    <li><a href="#">Video tutorial: Google Forms paso a paso</a></li>
-  </ul>
-</section>
-
-<section id="contacto">
-  <h2>Contacto</h2>
-  <p>Correo del proyecto: <a href="mailto:arodriguezdo@unprg.edu.pe">arodriguezdo@unprg.edu.pe</a></p>
-</section>
-
-<footer>
-  <p>© 2025 - Proyecto RSU UNPRG - Ingeniería en Computación e Informática</p>
-</footer>
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Proyecto RSU - Universidad Nacional Pedro Ruiz Gallo</p>
+      <p>Facultad de Ingeniería de Sistemas e Informática</p>
+    </div>
+  </footer>
 
 </body>
 </html>
-
