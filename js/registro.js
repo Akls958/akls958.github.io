@@ -20,35 +20,28 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
-// Referencias al formulario y al mensaje de error
+// Lógica del formulario de registro
 const registerForm = document.getElementById("register-form");
 const registerError = document.getElementById("register-error");
 
-registerForm.addEventListener("submit", (e) => {
+registerForm.addEventListener("submit", async (e) => {
   e.preventDefault();
+
   const email = registerForm.email.value;
   const password = registerForm.password.value;
 
-  // Validación básica
-  if (password.length < 6) {
-    registerError.textContent = "La contraseña debe tener al menos 6 caracteres.";
-    return;
+  try {
+    await createUserWithEmailAndPassword(auth, email, password);
+    alert("¡Registro exitoso! Ahora puedes iniciar sesión.");
+    window.location.href = "login.html"; // redirige después del popup
+  } catch (error) {
+    console.error("Error al registrar:", error);
+    if (error.code === "auth/email-already-in-use") {
+      registerError.textContent = "Este correo ya está registrado.";
+    } else if (error.code === "auth/weak-password") {
+      registerError.textContent = "La contraseña debe tener al menos 6 caracteres.";
+    } else {
+      registerError.textContent = "Error al registrar. Intenta nuevamente.";
+    }
   }
-
-  // Crear usuario en Firebase
-  createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      // Registro exitoso, redirigir
-      window.location.href = "dashboard.html";
-    })
-    .catch((error) => {
-      console.error(error.code, error.message);
-      if (error.code === "auth/email-already-in-use") {
-        registerError.textContent = "El correo ya está registrado.";
-      } else if (error.code === "auth/invalid-email") {
-        registerError.textContent = "Correo inválido.";
-      } else {
-        registerError.textContent = "Error al registrarse. Inténtalo de nuevo.";
-      }
-    });
 });
