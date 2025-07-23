@@ -1,64 +1,57 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Inicio - Proyecto RSU UNPRG</title>
-  <link rel="stylesheet" href="estilos.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RSU - Cursos Digitales UNPRG</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+  <link rel="icon" href="img/unprg-logo.png" />
 </head>
 <body>
-
-  <header>
-    <div class="container">
-      <img src="img/logo-unprg.png" alt="Logo UNPRG" class="logo">
-      <img src="img/logo-epici.png" alt="Logo EPICI" class="logo">
-      <h1>Proyecto RSU: Herramientas Digitales para la Educación Peruana</h1>
-      <nav>
-        <ul>
-          <li><a href="index.html" class="active">Inicio</a></li>
-          <li><a href="sobre.html">Sobre el Proyecto</a></li>
-          <li><a href="cursos.html">Cursos</a></li>
-          <li><a href="recursos.html">Recursos</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-      </nav>
+  <header class="header-principal">
+    <img src="img/unprg-logo.png" alt="Logo UNPRG" class="logo" />
+    <img src="img/epici-logo.png" alt="Logo EPICI" class="logo" />
+    <h1>Proyecto RSU - EPICI UNPRG</h1>
+    <p>Herramientas Digitales para la Educación Básica Peruana</p>
+    <div class="botones">
+      <a href="login.html" class="btn">Iniciar Sesión</a>
+      <a href="registro.html" class="btn btn-secundario">Registrarse</a>
     </div>
   </header>
 
-  <main class="container">
-    <section class="hero">
-      <h2>Bienvenido a nuestra iniciativa</h2>
-      <p>Este sitio forma parte de un proyecto de Responsabilidad Social Universitaria liderado por estudiantes de Ingeniería en Computación e Informática de la <strong>Universidad Nacional Pedro Ruiz Gallo</strong>.</p>
-      <p>Ofrecemos formación gratuita en herramientas digitales clave para docentes de educación primaria y secundaria.</p>
-      <a href="cursos.html" class="btn">Ver Cursos</a>
+  <main class="contenedor">
+    <section class="intro">
+      <h2>¿De qué trata este proyecto?</h2>
+      <p>Esta plataforma ofrece cursos virtuales gratuitos dirigidos a docentes y estudiantes de educación básica en el Perú. Aprende a usar herramientas digitales modernas con el acompañamiento de estudiantes de Ingeniería en Computación e Informática.</p>
     </section>
 
-    <section class="destacados">
-      <h2>¿Qué ofrecemos?</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>Capacitación Gratuita</h3>
-          <p>Accede a cursos diseñados especialmente para docentes peruanos.</p>
+    <section class="cursos-destacados">
+      <h2>Cursos disponibles</h2>
+      <div class="grid-cursos">
+        <div class="curso">
+          <h3>Herramientas de Google</h3>
+          <iframe src="https://www.youtube.com/embed/xT3m-XwA06g" frameborder="0" allowfullscreen></iframe>
         </div>
-        <div class="card">
-          <h3>Materiales Didácticos</h3>
-          <p>Guías, presentaciones y videotutoriales disponibles para descargar.</p>
+        <div class="curso">
+          <h3>Edición de Video</h3>
+          <iframe src="https://www.youtube.com/embed/yvF_QnP3nQc" frameborder="0" allowfullscreen></iframe>
         </div>
-        <div class="card">
-          <h3>Soporte Estudiantil</h3>
-          <p>Acompañamiento técnico por estudiantes voluntarios de UNPRG.</p>
+        <div class="curso">
+          <h3>Diseño Básico</h3>
+          <iframe src="https://www.youtube.com/embed/DO1Q7FzkmYM" frameborder="0" allowfullscreen></iframe>
         </div>
       </div>
     </section>
+
+    <section class="contacto">
+      <h2>Contacto</h2>
+      <p>Universidad Nacional Pedro Ruiz Gallo - Escuela Profesional de Ingeniería en Computación e Informática</p>
+      <p>Correo: <a href="mailto:rsu.epici@unprg.edu.pe">rsu.epici@unprg.edu.pe</a></p>
+    </section>
   </main>
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Proyecto RSU - Universidad Nacional Pedro Ruiz Gallo</p>
-      <p>Facultad de Ingeniería de Sistemas e Informática</p>
-    </div>
+  <footer class="footer">
+    <p>&copy; 2025 Proyecto RSU - UNPRG. Todos los derechos reservados.</p>
   </footer>
-
 </body>
 </html>
