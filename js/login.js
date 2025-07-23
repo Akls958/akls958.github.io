@@ -1,47 +1,38 @@
-import { auth } from "./firebase-config.js";
-import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+// Importa Firebase (asegúrate de que esté bien configurado en tu proyecto)
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
-document.addEventListener("DOMContentLoaded", () => {
-  const loginForm = document.getElementById("login-form");
-  const errorContainer = document.getElementById("login-error");
+// Tu configuración de Firebase
+const firebaseConfig = {
+  apiKey: "TU_API_KEY",
+  authDomain: "TU_AUTH_DOMAIN",
+  projectId: "TU_PROJECT_ID",
+  storageBucket: "TU_BUCKET",
+  messagingSenderId: "TU_MESSAGING_SENDER_ID",
+  appId: "TU_APP_ID"
+};
 
-  loginForm.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    errorContainer.textContent = ""; // Limpiar mensajes previos
+// Inicializa Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 
-    const email = loginForm["email"].value.trim();
-    const password = loginForm["password"].value.trim();
+// Manejador del formulario de login
+const loginForm = document.getElementById("login-form");
+const loginError = document.getElementById("login-error");
 
-    if (!email || !password) {
-      errorContainer.textContent = "Por favor, completa todos los campos.";
-      return;
-    }
+loginForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const email = loginForm.email.value;
+  const password = loginForm.password.value;
 
-    try {
-      const userCredential = await signInWithEmailAndPassword(auth, email, password);
-      const user = userCredential.user;
-
-      // Redirige si todo salió bien
+  signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Redirige al dashboard si el login fue exitoso
       window.location.href = "dashboard.html";
-    } catch (error) {
-      let message = "Ocurrió un error al iniciar sesión.";
-
-      switch (error.code) {
-        case "auth/user-not-found":
-          message = "No se encontró una cuenta con este correo.";
-          break;
-        case "auth/wrong-password":
-          message = "La contraseña es incorrecta.";
-          break;
-        case "auth/invalid-email":
-          message = "El correo ingresado no es válido.";
-          break;
-        case "auth/too-many-requests":
-          message = "Demasiados intentos fallidos. Intenta más tarde.";
-          break;
-      }
-
-      errorContainer.textContent = message;
-    }
-  });
+    })
+    .catch((error) => {
+      // Muestra error
+      loginError.textContent = "Correo o contraseña incorrectos.";
+      console.error(error.code, error.message);
+    });
 });
