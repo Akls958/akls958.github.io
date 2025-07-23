@@ -1,77 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cursos - Proyecto RSU</title>
-  <link rel="stylesheet" href="estilos.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <title>Curso - RSU</title>
+  <link rel="stylesheet" href="css/estilos.css" />
 </head>
 <body>
+  <h2 id="titulo-curso">Curso</h2>
+  <div id="contenido-curso"></div>
+  <button id="completar-btn">Marcar como completado</button>
+  <p><a href="dashboard.html">← Volver al panel</a></p>
 
-  <header>
-    <div class="container">
-      <img src="img/logo-unprg.png" alt="Logo UNPRG" class="logo">
-      <h1>Cursos - Herramientas Digitales para Docentes</h1>
-      <nav>
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="sobre.html">Sobre</a></li>
-          <li><a href="cursos.html" class="active">Cursos</a></li>
-          <li><a href="recursos.html">Recursos</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main class="container">
-    <section class="curso">
-      <h2>Curso: Google Classroom desde cero</h2>
-      <p>Aprende a gestionar clases virtuales, asignar tareas, calificar y comunicarte con tus estudiantes.</p>
-
-      <div class="leccion">
-        <h3>Lección 1: Introducción a Google Classroom</h3>
-        <iframe width="100%" height="315" src="https://www.youtube.com/embed/YOUTUBE_ID1" title="Lección 1" frameborder="0" allowfullscreen></iframe>
-        <p>Conoce la interfaz y funcionalidades básicas.</p>
-      </div>
-
-      <div class="leccion">
-        <h3>Lección 2: Crear tu primera clase</h3>
-        <iframe width="100%" height="315" src="https://www.youtube.com/embed/YOUTUBE_ID2" title="Lección 2" frameborder="0" allowfullscreen></iframe>
-        <p>Pasos para crear una clase y configurarla para tus alumnos.</p>
-      </div>
-
-      <div class="leccion">
-        <h3>Lección 3: Tareas y calificaciones</h3>
-        <iframe width="100%" height="315" src="https://www.youtube.com/embed/YOUTUBE_ID3" title="Lección 3" frameborder="0" allowfullscreen></iframe>
-        <p>Aprende a publicar tareas, poner fechas y calificar.</p>
-      </div>
-    </section>
-
-    <section class="curso">
-      <h2>Curso: Canva para docentes</h2>
-      <p>Diseña fichas, infografías y materiales educativos con Canva.</p>
-
-      <div class="leccion">
-        <h3>Lección 1: Qué es Canva</h3>
-        <iframe width="100%" height="315" src="https://www.youtube.com/embed/YOUTUBE_ID4" title="Canva para docentes" frameborder="0" allowfullscreen></iframe>
-        <p>Exploramos la herramienta y sus funciones básicas.</p>
-      </div>
-
-      <div class="leccion">
-        <h3>Lección 2: Crear materiales educativos</h3>
-        <iframe width="100%" height="315" src="https://www.youtube.com/embed/YOUTUBE_ID5" title="Diseño educativo con Canva" frameborder="0" allowfullscreen></iframe>
-        <p>Plantillas y recursos para el aula.</p>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <p>© 2025 Proyecto RSU - Universidad Nacional Pedro Ruiz Gallo</p>
-    </div>
-  </footer>
-
+  <script type="module" src="js/curso.js"></script>
 </body>
 </html>
