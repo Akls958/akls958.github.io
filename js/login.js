@@ -20,21 +20,23 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
-// Manejar el login
+// Manejador del formulario de login
 const loginForm = document.getElementById("login-form");
 const loginError = document.getElementById("login-error");
 
-loginForm.addEventListener("submit", async (e) => {
+loginForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const email = loginForm.email.value;
   const password = loginForm.password.value;
 
-  try {
-    await signInWithEmailAndPassword(auth, email, password);
-    // Redirige al dashboard si login fue exitoso
-    window.location.href = "dashboard.html";
-  } catch (error) {
-    console.error("Error al iniciar sesión:", error);
-    loginError.textContent = "Correo o contraseña incorrectos.";
-  }
+  signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Redirige al dashboard si el login fue exitoso
+      window.location.href = "dashboard.html";
+    })
+    .catch((error) => {
+      // Muestra error
+      loginError.textContent = "Correo o contraseña incorrectos.";
+      console.error(error.code, error.message);
+    });
 });
